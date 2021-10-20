@@ -13,6 +13,7 @@ pipeline {
             steps {
                 step{
                     docker_image = docker.build(":")
+                    echo docker_image
                 }
             }
         }
