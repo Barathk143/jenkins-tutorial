@@ -11,7 +11,7 @@ pipeline {
     stages {
         stage('Building Docker Image') {
             steps {
-                script{
+                step{
                     docker_image = docker.build(":")
                 }
             }
