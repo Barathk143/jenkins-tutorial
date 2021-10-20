@@ -1,13 +1,15 @@
 pipeline {
-    agent {
-    }
     environment {
         POM_VERSION = getVersion()
         AWS_REGION = 'us-east-1'
         AWS_ECR_URL = 'http://826443632289.dkr.ecr.us-east-1.amazonaws.com/jenkins-test'
+        VERSION = 'v0.0.1'
     }
     stages {
-        stage('Build Docker Image') {
+        stage('Building Docker Image'){
+            image = docker.build(":")
+        }
+        stage('Deploy Image') {
             steps {
                 withCredentials("") {
                     script {
