@@ -15,12 +15,12 @@ pipeline {
         }
         stage('Deploy Image') {
             steps {
-                echo 'Deploy Image'
+                echo 'Deploy Image '
             }
         }
         stage('Build') {
             steps {
-                echo 'Building..'
+                echo 'Building.. '
             }
         }
         stage('Test') {
