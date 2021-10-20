@@ -12,7 +12,7 @@ pipeline {
         stage('Building Docker Image') {
             steps {
                 step{
-                    echo 
+                    echo ''
                 }
                 step{
                     docker_image = docker.build(":")
