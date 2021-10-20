@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('Build Docker Image') {
             steps {
-                withCredentials('') {
+                withCredentials("") {
                     script {
                         docker.build(":", )
                     }
