@@ -16,11 +16,7 @@ pipeline {
         }
         stage('Deploy Image') {
             steps {
-                withCredentials("") {
-                    script {
-                        docker.build(":", )
-                    }
-                }
+                
             }
         }
         stage('Build') {
