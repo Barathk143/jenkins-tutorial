@@ -11,10 +11,7 @@ pipeline {
     stages {
         stage('Building Docker Image') {
             steps {
-                step{
-                    echo ''
-                }
-                
+                echo ''
             }
         }
         stage('Deploy Image') {
