@@ -2,7 +2,7 @@ pipeline {
     agent any
     environment {
         AWS_REGION = 'us-east-1'
-        AWS_ECR_URL = 'http://826443632289.dkr.ecr.us-east-1.amazonaws.com/jenkins-test'
+        ECR_URI = '826443632289.dkr.ecr.us-east-1.amazonaws.com/jenkins-test'
         VERSION = 'v0.0.1'
 
         docker_image = ''
@@ -10,7 +10,8 @@ pipeline {
     stages {
         stage('Building Docker Image') {
             steps {
-                echo "hahahahaha AWS_ECR_URL: ${AWS_ECR_URL}"
+                docker_image = docker.build("https://${ECR_URI}", 'ecr.us-east-1.amazonaws.com/jenkins-test')
+                echo "docker_image: ${docker_image}"
             }
         }
         stage('Deploy Image') {
