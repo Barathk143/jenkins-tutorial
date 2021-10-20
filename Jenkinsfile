@@ -10,17 +10,17 @@ pipeline {
     stages {
         stage('Building Docker Image') {
             steps {
-                echo "hahahahaha AWS_ECR_URL: "
+                echo "hahahahaha AWS_ECR_URL: ${AWS_ECR_URL}"
             }
         }
         stage('Deploy Image') {
             steps {
-                echo 'Deploy Image '
+                echo 'Deploy Image ${AWS_REGION}'
             }
         }
         stage('Build') {
             steps {
-                echo 'Building.. '
+                echo 'Building.. ${VERSION}'
             }
         }
         stage('Test') {
