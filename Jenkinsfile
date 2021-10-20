@@ -1,4 +1,5 @@
 pipeline {
+    agent any
     environment {
         POM_VERSION = getVersion()
         AWS_REGION = 'us-east-1'
