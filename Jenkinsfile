@@ -1,5 +1,5 @@
 node {
-    state('Clone Repository'){
+    stage('Clone Repository'){
         checkout scm
     }
 }
