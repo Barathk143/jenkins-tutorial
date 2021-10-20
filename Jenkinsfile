@@ -9,8 +9,10 @@ pipeline {
         docker_image = ''
     }
     stages {
-        stage('Building Docker Image'){
-            docker_image = docker.build(":")
+        stage('Building Docker Image') {
+            steps {
+                docker_image = docker.build(":")    
+            }
         }
         stage('Deploy Image') {
             steps {
