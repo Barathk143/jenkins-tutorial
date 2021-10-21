@@ -6,7 +6,7 @@ VERSION = 'v0.0.1'
 app = docker.build("${ECR_PATH}/${ECR_IMAGE}")
 echo "app: ${app}"
 
-echo docker.withRegistry("https://${ECR_PATH}")
+echo docker.withRegistry("https://${ECR_PATH}", "ecr:us-east-1:AKIA4A27BB2QXSFEVPOE")
 
 node {
     stage('Clone Repository'){
