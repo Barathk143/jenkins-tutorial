@@ -6,7 +6,7 @@ VERSION = 'v0.0.1'
 app = docker.build("${ECR_PATH}/${ECR_IMAGE}")
 echo "app: ${app}"
 
-echo docker.withRegistry("https://${ECR_PATH}", "github-personal-access-token")
+echo docker.withRegistry("https://${ECR_PATH}")
 
 node {
     stage('Clone Repository'){
