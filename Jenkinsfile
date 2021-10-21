@@ -22,7 +22,6 @@ node {
         withKubeConfig([credentialsId: "kubectl-deploy-credentials",
                         serverUrl: "${EKR_API}",
                         namespace: 'default',
-                        context:  'arn:aws:eks:us-east-1:826443632289:cluster/My-EKS',
                         clusterName: 'My-EKS']){
             sh "kubectl apply -f nginx-deployment.yaml"
         }
