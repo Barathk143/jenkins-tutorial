@@ -24,7 +24,7 @@ node {
                         namespace: 'default',
                         context:  'arn:aws:eks:us-east-1:826443632289:cluster/My-EKS',
                         clusterName: 'My-EKS']){
-            sh "kubectl get pods"
+            sh "kubectl apply -f nginx-deployment.yaml"
         }
 
 
