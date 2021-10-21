@@ -18,7 +18,7 @@ node {
         }
     }
     stage('Kubernetes'){
-        sh "/home/ubuntu/bin/kubectl get pods"
+        sh "kubectl get pods"
 
     }
 }
