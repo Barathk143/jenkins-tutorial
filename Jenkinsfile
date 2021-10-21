@@ -6,11 +6,10 @@ VERSION = 'v0.0.1'
 app = docker.build("${ECR_PATH}/${ECR_IMAGE}")
 echo "app: ${app}"
 
-
-
 node {
     stage('Clone Repository'){
         checkout scm
+        echo "${env}"
     }
     stage('Docker Build'){
         docker.withRegistry("https://${ECR_PATH}", 'ecr:us-east-1:jenkins-aws-anderson-credentials'){
