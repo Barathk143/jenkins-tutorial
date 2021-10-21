@@ -20,8 +20,10 @@ node {
     }
     stage('Kubernetes'){
         withKubeConfig([credentialsId: "jenkins-aws-anderson-credentials",
-                        serverUrl: "${EKR_API}"])
-        sh "kubectl get pods"
+                        serverUrl: "${EKR_API}"]){
+            sh "kubectl get pods"
+        }
+
 
     }
 }
