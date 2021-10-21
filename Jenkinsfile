@@ -22,7 +22,7 @@ node {
         withKubeConfig([credentialsId: "kubectl-deploy-credentials",
                         serverUrl: "${EKR_API}",
                         namespace: 'default',
-                        clusterName: 'Jenkins-EKS-Cluster']){
+                        clusterName: 'My-EKS']){
             sh "kubectl get pods"
         }
 
