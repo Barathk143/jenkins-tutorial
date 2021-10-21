@@ -19,7 +19,7 @@ node {
         }
     }
     stage('Kubernetes'){
-        withKubeConfig([credentialsId: "jenkins-aws-anderson-credentials",
+        withKubeConfig([credentialsId: "kubectl-deploy-credentials",
                         serverUrl: "${EKR_API}",
                         clusterName: 'Jenkins-EKS-Cluster',
                         namespace: 'default']){
