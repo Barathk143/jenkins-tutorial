@@ -18,6 +18,7 @@ node {
         }
     }
     stage('Kubernetes'){
+        sh kubectl get pods
 
     }
 }
