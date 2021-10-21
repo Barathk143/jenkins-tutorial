@@ -6,7 +6,7 @@ VERSION = 'v0.0.1'
 app = docker.build("${ECR_PATH}/${ECR_IMAGE}")
 echo "app: ${app}"
 
-// docker.withRegistry("https://${ECR_URI}", "ecr:${ECR_REGION}:jenkins-test-credentials")
+echo docker.withRegistry("https://${ECR_PATH}", "ecr:${ECR_REGION}:jenkins-test-credentials")
 
 node {
     stage('Clone Repository'){
