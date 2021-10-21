@@ -9,7 +9,9 @@ echo "app: ${app}"
 node {
     stage('Clone Repository'){
         checkout scm
-        echo "${env}"
+    }
+    stage('Git'){
+        git 'ssh://git@github.com:AndersonJo/jenkins-tutorial.git'
     }
     stage('Docker Build'){
         docker.withRegistry("https://${ECR_PATH}", 'ecr:us-east-1:jenkins-aws-anderson-credentials'){
