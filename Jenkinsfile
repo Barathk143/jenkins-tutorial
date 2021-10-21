@@ -13,7 +13,8 @@ node {
 
     stage('Docker Build'){
         docker.withRegistry("https://${ECR_PATH}", 'ecr:us-east-1:jenkins-aws-anderson-credentials'){
-
+            def image = docker.build("${ECR_PATH}/${ECR_IMAGE}:${VERSION}")
+            image.push()
         }
     }
     stage('Build Image'){
