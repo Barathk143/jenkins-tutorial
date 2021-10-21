@@ -23,7 +23,9 @@ node {
                         serverUrl: "${EKR_API}",
                         namespace: 'default',
                         clusterName: 'My-EKS']){
-            sh "kubectl apply -f nginx-deployment.yaml"
+
+            sh "sed 's/IMAGE_VERSION/${env.BUILD_ID}/g' nginx-deployment.yaml > output.yaml"
+            sh "kubectl apply -f output.yaml"
         }
 
 
