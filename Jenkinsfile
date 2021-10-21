@@ -21,8 +21,7 @@ node {
     stage('Kubernetes'){
         withKubeConfig([credentialsId: "kubectl-deploy-credentials",
                         serverUrl: "${EKR_API}",
-                        clusterName: 'Jenkins-EKS-Cluster',
-                        namespace: 'default']){
+                        clusterName: 'Jenkins-EKS-Cluster']){
             sh "kubectl get pods"
         }
 
